@@ -38,11 +38,11 @@ const password = document.querySelector('#pwd');
 const passwordError = document.querySelector('.pwd-output');
 
 password.addEventListener('input', function() {
-    let passwordRegex = /^.{8,}$/;
+    let passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (passwordRegex.test(password.value)) {
         passwordError.textContent = "";
     } else {
-        passwordError.textContent = "Password must be at least 8 characters";
+        passwordError.textContent = "Password must meet all rules: Minimum 8 characters, 1 uppercase letter, 1 numeric digit, and 1 special character";
     }
 });
 
