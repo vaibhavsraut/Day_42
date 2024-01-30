@@ -34,6 +34,18 @@ mobile.addEventListener('input', function() {
     }
 });
 
+const password = document.querySelector('#pwd');
+const passwordError = document.querySelector('.pwd-output');
+
+password.addEventListener('input', function() {
+    let passwordRegex = /^.{8,}$/;
+    if (passwordRegex.test(password.value)) {
+        passwordError.textContent = "";
+    } else {
+        passwordError.textContent = "Password must be at least 8 characters";
+    }
+});
+
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');
 
