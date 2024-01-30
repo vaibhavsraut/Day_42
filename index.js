@@ -22,6 +22,18 @@ email.addEventListener('input', function() {
     }
 });
 
+const mobile = document.querySelector('#tel');
+const mobileError = document.querySelector('.tel-output');
+
+mobile.addEventListener('input', function() {
+    let mobileRegex = /^\d{1,4}\s\d{10}$/;
+    if (mobileRegex.test(mobile.value)) {
+        mobileError.textContent = "";
+    } else {
+        mobileError.textContent = "Mobile format is Incorrect.";
+    }
+});
+
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');
 
